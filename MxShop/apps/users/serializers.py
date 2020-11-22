@@ -7,7 +7,7 @@ from django.contrib.auth import get_user_model
 from rest_framework import serializers
 from rest_framework.validators import UniqueValidator
 
-from MxShop.settings import REGEX_MOBILE
+#from M##xShop.settings import REGEX_MOBILE
 from .models import VerifyCode
 
 User = get_user_model()
@@ -27,8 +27,8 @@ class SmsSerializer(serializers.Serializer):
             raise serializers.ValidationError("用户已经存在")
 
         # 验证手机号码是否合法
-        if not re.match(REGEX_MOBILE, mobile):
-            raise serializers.ValidationError("手机号码非法")
+       # if not re.match(REGEX_MOBILE, mobile):
+       #     raise serializers.ValidationError("手机号码非法")
 
         # 验证码发送频率
         one_mintes_ago = datetime.now() - timedelta(hours=0, minutes=1, seconds=0)

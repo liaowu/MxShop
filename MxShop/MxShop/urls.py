@@ -24,6 +24,7 @@ from rest_framework_jwt.views import obtain_jwt_token
 from MxShop.settings import MEDIA_ROOT
 from django.views.static import serve
 
+#from django.views.generic import TemplateView
 
 # 配置goods的urls
 from apps.goods.views import GoodsListViewSet, CategoryViewset, BannerViewset, HotSearchsViewset, IndexCategoryViewset
@@ -73,6 +74,7 @@ urlpatterns = [
 
     #     商品列表页
     url(r'^', include(router.urls)),
+#    url(r'^$', TemplateView.as_view(template_name="index.html")),
 
     url(r'^docs/', include_docs_urls(title='青稞生活馆')),
     # drf自带的token认证模式
